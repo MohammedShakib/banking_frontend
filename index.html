@@ -230,14 +230,15 @@
             </fieldset>
 
             <!-- Step 4: Declaration & Submission -->
-            <fieldset class="space-y-4 mt-8 fade-in slide-in">
+            <fieldset class="space-y-4 mt-8">
                 <legend class="text-lg font-semibold text-gray-700">Step 4: Declaration & Submission</legend>
 
                 <p class="text-gray-700">I hereby declare that the information provided above is true and correct. I agree to abide by the bank’s terms and conditions.</p>
 
+                <!-- File Upload for Applicant’s Signature -->
                 <label class="block">
                     <span class="text-gray-700">Applicant’s Signature</span>
-                    <input type="text" class="input input-bordered w-full mt-1">
+                    <input type="file" accept=".png, .jpg, .jpeg, .pdf" class="file-input file-input-bordered w-full mt-1">
                 </label>
 
                 <button type="submit" class="btn btn-primary w-full mt-4">Submit</button>
