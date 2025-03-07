@@ -3,46 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banking Registration</title>
+    <title>Banking Registration Form</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100 dark:bg-gray-900 flex justify-center items-center min-h-screen">
-    <div class="card w-full max-w-md bg-white dark:bg-gray-800 shadow-lg p-6 rounded-xl">
-        <h2 class="text-2xl font-bold text-center mb-4 text-gray-800 dark:text-white">Bank Registration</h2>
+<body class="bg-gray-100 dark:bg-gray-900 flex justify-center items-center min-h-screen p-4">
+    <div class="card w-full max-w-3xl bg-white dark:bg-gray-800 shadow-lg p-6 rounded-xl">
+        <h2 class="text-2xl font-bold text-center mb-4 text-gray-800 dark:text-white">Bank Registration Form</h2>
         <form action="index.php" method="post" class="space-y-4">
-            <!-- First Name -->
+            
+            <!-- Account Name & Number -->
             <label class="block">
-                <span class="text-gray-700 dark:text-gray-300">First Name</span>
-                <input type="text" name="fname" class="input input-bordered w-full mt-1" required>
+                <span class="text-gray-700 dark:text-gray-300">Account Name</span>
+                <input type="text" name="account_name" class="input input-bordered w-full mt-1" required>
+            </label>
+            
+            <label class="block">
+                <span class="text-gray-700 dark:text-gray-300">Account Number</span>
+                <input type="text" name="account_number" class="input input-bordered w-full mt-1" required>
             </label>
 
-            <!-- Last Name -->
-            <label class="block">
-                <span class="text-gray-700 dark:text-gray-300">Last Name</span>
-                <input type="text" name="lname" class="input input-bordered w-full mt-1" required>
-            </label>
-
-            <!-- Phone Number -->
-            <label class="block">
-                <span class="text-gray-700 dark:text-gray-300">Phone Number</span>
-                <input type="tel" name="phone" class="input input-bordered w-full mt-1" pattern="[0-9]{10}" placeholder="Enter 10-digit phone number" required>
-            </label>
-
-            <!-- Date of Birth -->
+            <!-- Date of Birth, Gender, Marital Status -->
             <label class="block">
                 <span class="text-gray-700 dark:text-gray-300">Date of Birth</span>
                 <input type="date" name="dob" class="input input-bordered w-full mt-1" required>
             </label>
 
-            <!-- NID Number -->
+            <div class="flex space-x-4">
+                <label class="flex items-center">
+                    <input type="radio" name="gender" value="Male" class="radio radio-primary" required>
+                    <span class="ml-2 text-gray-700 dark:text-gray-300">Male</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="radio" name="gender" value="Female" class="radio radio-primary">
+                    <span class="ml-2 text-gray-700 dark:text-gray-300">Female</span>
+                </label>
+            </div>
+
+            <div class="flex space-x-4">
+                <label class="flex items-center">
+                    <input type="radio" name="marital_status" value="Single" class="radio radio-primary" required>
+                    <span class="ml-2 text-gray-700 dark:text-gray-300">Single</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="radio" name="marital_status" value="Married" class="radio radio-primary">
+                    <span class="ml-2 text-gray-700 dark:text-gray-300">Married</span>
+                </label>
+            </div>
+
+            <!-- Citizenship & Other GIF -->
             <label class="block">
-                <span class="text-gray-700 dark:text-gray-300">NID Number</span>
-                <input type="text" name="nid" class="input input-bordered w-full mt-1" required>
+                <span class="text-gray-700 dark:text-gray-300">Citizenship</span>
+                <input type="text" name="citizenship" class="input input-bordered w-full mt-1" required>
             </label>
 
-            <!-- Submit Button -->
-            <button type="submit" class="btn btn-primary w-full">Create Account</button>
+            <label class="block">
+                <span class="text-gray-700 dark:text-gray-300">Other GIF (Yes/No)</span>
+                <input type="text" name="other_gif" class="input input-bordered w-full mt-1">
+            </label>
+
+            <!-- Credit Card Details -->
+            <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300">Credit Card Details (if any)</h3>
+            <label class="block">
+                <span class="text-gray-700 dark:text-gray-300">Credit Card Name</span>
+                <input type="text" name="credit_card_name" class="input input-bordered w-full mt-1">
+            </label>
+
+            <label class="block">
+                <span class="text-gray-700 dark:text-gray-300">Credit Card Number</span>
+                <input type="text" name="credit_card_number" class="input input-bordered w-full mt-1">
+            </label>
+
+            <!-- User Type & Updates -->
+            <div class="grid grid-cols-2 gap-4">
+                <label class="flex items-center">
+                    <input type="checkbox" name="user_type" value="New User" class="checkbox checkbox-primary">
+                    <span class="ml-2 text-gray-700 dark:text-gray-300">New User</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" name="user_type" value="Existing User" class="checkbox checkbox-primary">
+                    <span class="ml-2 text-gray-700 dark:text-gray-300">Existing User</span>
+                </label>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <label class="flex items-center">
+                    <input type="checkbox" name="update_mobile" class="checkbox checkbox-primary">
+                    <span class="ml-2 text-gray-700 dark:text-gray-300">Mobile Number Update</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" name="update_email" class="checkbox checkbox-primary">
+                    <span class="ml-2 text-gray-700 dark:text-gray-300">Email Address Update</span>
+                </label>
+            </div>
+
+            <!-- Transaction Mode & Token Type -->
+            <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300">Mode Type</h3>
+            <select name="mode_type" class="select select-bordered w-full">
+                <option value="View Mode">View Mode</option>
+                <option value="Transaction Mode">Transaction Mode</option>
+            </select>
+
+            <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300">Token Type</h3>
+            <select name="token_type" class="select select-bordered w-full">
+                <option value="Hardware Token">Hardware Token</option>
+                <option value="Software Token">Software Token</option>
+            </select>
+
+            <!-- Email & Mobile -->
+            <label class="block">
+                <span class="text-gray-700 dark:text-gray-300">Email Address</span>
+                <input type="email" name="email" class="input input-bordered w-full mt-1" required>
+            </label>
+
+            <label class="block">
+                <span class="text-gray-700 dark:text-gray-300">Mobile Number</span>
+                <input type="tel" name="mobile" class="input input-bordered w-full mt-1" pattern="[0-9]{10}" required>
+            </label>
+
+            <!-- Declaration & Signature -->
+            <p class="text-gray-700 dark:text-gray-300 text-sm">
+                I confirm that the information given above is complete and accurate. I agree to comply with the terms and conditions of the bank.
+            </p>
+
+            <label class="block">
+                <span class="text-gray-700 dark:text-gray-300">Date</span>
+                <input type="date" name="signature_date" class="input input-bordered w-full mt-1" required>
+            </label>
+
+            <button type="submit" class="btn btn-primary w-full">Submit</button>
         </form>
     </div>
 </body>
