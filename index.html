@@ -3,136 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banking Registration Form</title>
+    <title>Open Bank Account</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 flex justify-center items-center min-h-screen p-4">
-    <div class="card w-full max-w-3xl bg-white dark:bg-gray-800 shadow-lg p-6 rounded-xl">
-        <h2 class="text-2xl font-bold text-center mb-4 text-gray-800 dark:text-white">Bank Registration Form</h2>
-        <form action="index.php" method="post" class="space-y-4">
+
+    <div class="card w-full max-w-lg bg-white dark:bg-gray-800 shadow-lg p-6 rounded-xl">
+        <h2 class="text-2xl font-bold text-center mb-4 text-gray-800 dark:text-white">Open A/C</h2>
+
+        <!-- Step Indicator (Static for now) -->
+        <div class="flex items-center justify-between mb-4">
+            <div class="step step-primary">1</div>
+            <div class="border-t-2 border-gray-400 flex-grow mx-2"></div>
+            <div class="step">2</div>
+            <div class="border-t-2 border-gray-400 flex-grow mx-2"></div>
+            <div class="step">3</div>
+        </div>
+
+        <form class="space-y-4">
             
-            <!-- Account Name & Number -->
-            <label class="block">
-                <span class="text-gray-700 dark:text-gray-300">Account Name</span>
-                <input type="text" name="account_name" class="input input-bordered w-full mt-1" required>
-            </label>
-            
-            <label class="block">
-                <span class="text-gray-700 dark:text-gray-300">Account Number</span>
-                <input type="text" name="account_number" class="input input-bordered w-full mt-1" required>
-            </label>
+            <!-- Step 1: Personal Information -->
+            <fieldset class="space-y-4">
+                <legend class="text-lg font-semibold text-gray-700 dark:text-gray-300">Step 1: Personal Information</legend>
 
-            <!-- Date of Birth, Gender, Marital Status -->
-            <label class="block">
-                <span class="text-gray-700 dark:text-gray-300">Date of Birth</span>
-                <input type="date" name="dob" class="input input-bordered w-full mt-1" required>
-            </label>
+                <!-- Branch Dropdown -->
+                <label class="block">
+                    <span class="text-gray-700 dark:text-gray-300">Branch</span>
+                    <select class="select select-bordered w-full">
+                        <option>Select Branch</option>
 
-            <div class="flex space-x-4">
-                <label class="flex items-center">
-                    <input type="radio" name="gender" value="Male" class="radio radio-primary" required>
-                    <span class="ml-2 text-gray-700 dark:text-gray-300">Male</span>
+                        <optgroup label="Dhaka Region">
+                            <option>Local Office</option>
+                            <option>Banani Branch</option>
+                            <option>Nababpur Branch</option>
+                            <option>Motijheel Foreign Exchange Branch</option>
+                            <option>Kawran Bazar Branch</option>
+                            <option>Shantinagar Branch</option>
+                            <option>Dhanmondi Branch</option>
+                        </optgroup>
+
+                        <optgroup label="Chittagong Region">
+                            <option>Agrabad Branch</option>
+                            <option>Patherhat Branch</option>
+                            <option>Hathazari Branch</option>
+                            <option>O.R. Nizam Road Branch</option>
+                        </optgroup>
+
+                        <optgroup label="Sylhet Region">
+                            <option>Sylhet Branch</option>
+                            <option>Biswanath Branch</option>
+                            <option>Golapganj Branch</option>
+                        </optgroup>
+
+                        <optgroup label="Khulna Region">
+                            <option>Khulna Branch</option>
+                            <option>Daulatpur Branch</option>
+                            <option>Boro Bazar Branch</option>
+                        </optgroup>
+
+                        <optgroup label="Rajshahi Region">
+                            <option>Rajshahi Branch</option>
+                            <option>Chapai Nawabganj Branch</option>
+                        </optgroup>
+
+                        <optgroup label="Barisal Region">
+                            <option>Barishal Branch</option>
+                            <option>Bhola Branch</option>
+                        </optgroup>
+
+                        <optgroup label="Rangpur Region">
+                            <option>Rangpur Branch</option>
+                            <option>Dhap Branch</option>
+                        </optgroup>
+
+                        <optgroup label="Mymensingh Region">
+                            <option>Mymensingh Branch</option>
+                        </optgroup>
+                    </select>
                 </label>
-                <label class="flex items-center">
-                    <input type="radio" name="gender" value="Female" class="radio radio-primary">
-                    <span class="ml-2 text-gray-700 dark:text-gray-300">Female</span>
+
+                <label class="block">
+                    <span class="text-gray-700 dark:text-gray-300">Father's Name</span>
+                    <input type="text" class="input input-bordered w-full mt-1">
                 </label>
-            </div>
 
-            <div class="flex space-x-4">
-                <label class="flex items-center">
-                    <input type="radio" name="marital_status" value="Single" class="radio radio-primary" required>
-                    <span class="ml-2 text-gray-700 dark:text-gray-300">Single</span>
+                <label class="block">
+                    <span class="text-gray-700 dark:text-gray-300">Mother's Name</span>
+                    <input type="text" class="input input-bordered w-full mt-1">
                 </label>
-                <label class="flex items-center">
-                    <input type="radio" name="marital_status" value="Married" class="radio radio-primary">
-                    <span class="ml-2 text-gray-700 dark:text-gray-300">Married</span>
+
+                <label class="block">
+                    <span class="text-gray-700 dark:text-gray-300">Marital Status</span>
+                    <div class="flex space-x-2 mt-1">
+                        <button type="button" class="btn btn-primary w-1/2">Un-Married</button>
+                        <button type="button" class="btn btn-outline w-1/2">Married</button>
+                    </div>
                 </label>
-            </div>
 
-            <!-- Citizenship & Other GIF -->
-            <label class="block">
-                <span class="text-gray-700 dark:text-gray-300">Citizenship</span>
-                <input type="text" name="citizenship" class="input input-bordered w-full mt-1" required>
-            </label>
+                <button type="button" class="btn btn-primary w-full mt-4">Next</button>
+            </fieldset>
 
-            <label class="block">
-                <span class="text-gray-700 dark:text-gray-300">Other GIF (Yes/No)</span>
-                <input type="text" name="other_gif" class="input input-bordered w-full mt-1">
-            </label>
+            <!-- Step 2: Financial Details -->
+            <fieldset class="space-y-4 mt-8">
+                <legend class="text-lg font-semibold text-gray-700 dark:text-gray-300">Step 2: Financial Information</legend>
 
-            <!-- Credit Card Details -->
-            <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300">Credit Card Details (if any)</h3>
-            <label class="block">
-                <span class="text-gray-700 dark:text-gray-300">Credit Card Name</span>
-                <input type="text" name="credit_card_name" class="input input-bordered w-full mt-1">
-            </label>
-
-            <label class="block">
-                <span class="text-gray-700 dark:text-gray-300">Credit Card Number</span>
-                <input type="text" name="credit_card_number" class="input input-bordered w-full mt-1">
-            </label>
-
-            <!-- User Type & Updates -->
-            <div class="grid grid-cols-2 gap-4">
-                <label class="flex items-center">
-                    <input type="checkbox" name="user_type" value="New User" class="checkbox checkbox-primary">
-                    <span class="ml-2 text-gray-700 dark:text-gray-300">New User</span>
+                <label class="block">
+                    <span class="text-gray-700 dark:text-gray-300">Monthly Income</span>
+                    <input type="text" class="input input-bordered w-full mt-1">
                 </label>
-                <label class="flex items-center">
-                    <input type="checkbox" name="user_type" value="Existing User" class="checkbox checkbox-primary">
-                    <span class="ml-2 text-gray-700 dark:text-gray-300">Existing User</span>
+
+                <label class="block">
+                    <span class="text-gray-700 dark:text-gray-300">Source of Fund</span>
+                    <select class="select select-bordered w-full">
+                        <option>Select Source</option>
+                        <option>Salary</option>
+                        <option>Business</option>
+                        <option>Investment</option>
+                    </select>
                 </label>
-            </div>
 
-            <div class="grid grid-cols-2 gap-4">
-                <label class="flex items-center">
-                    <input type="checkbox" name="update_mobile" class="checkbox checkbox-primary">
-                    <span class="ml-2 text-gray-700 dark:text-gray-300">Mobile Number Update</span>
+                <label class="block">
+                    <span class="text-gray-700 dark:text-gray-300">Select Occupation</span>
+                    <select class="select select-bordered w-full">
+                        <option>Select Occupation</option>
+                        <option>Self-Employed</option>
+                        <option>Salaried</option>
+                        <option>Business</option>
+                    </select>
                 </label>
-                <label class="flex items-center">
-                    <input type="checkbox" name="update_email" class="checkbox checkbox-primary">
-                    <span class="ml-2 text-gray-700 dark:text-gray-300">Email Address Update</span>
+
+                <div class="flex justify-between mt-4">
+                    <button type="button" class="btn btn-outline">Previous</button>
+                    <button type="button" class="btn btn-primary">Next</button>
+                </div>
+            </fieldset>
+
+            <!-- Step 3: Account Details -->
+            <fieldset class="space-y-4 mt-8">
+                <legend class="text-lg font-semibold text-gray-700 dark:text-gray-300">Step 3: Account Information</legend>
+
+                <label class="block">
+                    <span class="text-gray-700 dark:text-gray-300">Email Address</span>
+                    <input type="email" class="input input-bordered w-full mt-1">
                 </label>
-            </div>
 
-            <!-- Transaction Mode & Token Type -->
-            <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300">Mode Type</h3>
-            <select name="mode_type" class="select select-bordered w-full">
-                <option value="View Mode">View Mode</option>
-                <option value="Transaction Mode">Transaction Mode</option>
-            </select>
+                <label class="block">
+                    <span class="text-gray-700 dark:text-gray-300">Mobile Number</span>
+                    <input type="tel" class="input input-bordered w-full mt-1" pattern="[0-9]{10}">
+                </label>
 
-            <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300">Token Type</h3>
-            <select name="token_type" class="select select-bordered w-full">
-                <option value="Hardware Token">Hardware Token</option>
-                <option value="Software Token">Software Token</option>
-            </select>
+                <label class="block">
+                    <span class="text-gray-700 dark:text-gray-300">Account Number</span>
+                    <input type="text" class="input input-bordered w-full mt-1">
+                </label>
 
-            <!-- Email & Mobile -->
-            <label class="block">
-                <span class="text-gray-700 dark:text-gray-300">Email Address</span>
-                <input type="email" name="email" class="input input-bordered w-full mt-1" required>
-            </label>
+                <div class="flex justify-between mt-4">
+                    <button type="button" class="btn btn-outline">Previous</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </fieldset>
 
-            <label class="block">
-                <span class="text-gray-700 dark:text-gray-300">Mobile Number</span>
-                <input type="tel" name="mobile" class="input input-bordered w-full mt-1" pattern="[0-9]{10}" required>
-            </label>
-
-            <!-- Declaration & Signature -->
-            <p class="text-gray-700 dark:text-gray-300 text-sm">
-                I confirm that the information given above is complete and accurate. I agree to comply with the terms and conditions of the bank.
-            </p>
-
-            <label class="block">
-                <span class="text-gray-700 dark:text-gray-300">Date</span>
-                <input type="date" name="signature_date" class="input input-bordered w-full mt-1" required>
-            </label>
-
-            <button type="submit" class="btn btn-primary w-full">Submit</button>
         </form>
     </div>
+
 </body>
 </html>
