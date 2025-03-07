@@ -53,7 +53,7 @@
         .slide-in {
             opacity: 0;
             transform: translateX(-50px);
-            animation: slideIn 0.5s ease-in-out forwards;
+            animation: slideIn 0.1s ease-in-out forwards;
         }
 
         @keyframes slideIn {
@@ -66,6 +66,33 @@
                 transform: translateX(0);
             }
         }
+
+        /* Scrolling text animation */
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+            background-color: #e8f5e9; /* Light green background */
+            padding: 10px;
+            width: 100%;
+            position: relative;
+        }
+
+        .marquee-text {
+            display: inline-block;
+            animation: marquee 25s linear infinite;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        @keyframes marquee {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
     </style>
 </head>
 
@@ -74,10 +101,15 @@
     <div class="card w-full max-w-2xl bg-white shadow-lg p-6 rounded-xl fade-in">
         <!-- Ubank Logo with Zoom Animation -->
         <div class="flex justify-center">
-            <img src="./logo.png" alt="Ubank Logo" class="w-32 h-32 logo-animation">
+            <img src="./update logo.png" alt="Ubank Logo" class="w-32 h-32 logo-animation">
         </div>
 
         <h2 class="text-2xl font-bold text-center mb-4 text-gray-800 slide-in">Bank Account Opening Form</h2>
+
+        <!-- Scrolling Bank Info -->
+        <div class="marquee-container">
+            <span class="marquee-text">UBank is Bangladesh's most innovative and technologically advanced bank. UBank stands to give the most innovative and affordable banking products to Bangladesh.</span>
+        </div>
 
         <form class="space-y-4">
     
@@ -85,105 +117,96 @@
             <fieldset class="space-y-4 fade-in slide-in">
                 <legend class="text-lg font-semibold text-gray-700">Step 1: Applicant Information</legend>
 
-                <!-- Branch Dropdown with Regions -->
-                <label class="block">
-                    <span class="text-gray-700 dark:text-gray-300">Branch</span>
-                    <select class="select select-bordered w-full">
-                        <option>Select Branch</option>
+               <!-- Branch Dropdown with Regions -->
+               <label class="block">
+                <span class="text-gray-700 dark:text-gray-300">Branch</span>
+                <select class="select select-bordered w-full">
+                    <option>Select Branch</option>
 
-                        <optgroup label="Dhaka Region">
-                            <option>Local Office</option>
-                            <option>Banani Branch</option>
-                            <option>Nababpur Branch</option>
-                            <option>Motijheel Foreign Exchange Branch</option>
-                            <option>Kawran Bazar Branch</option>
-                            <option>Shantinagar Branch</option>
-                            <option>Dhanmondi Branch</option>
-                            <option>Mohakhali Branch</option>
-                            <option>Mirpur Branch</option>
-                            <option>Gulshan Branch</option>
-                            <option>Uttara Branch</option>
-                            <option>Islampur Branch</option>
-                            <option>Dania Branch</option>
-                            <option>Dhaka EPZ Branch</option>
-                            <option>Elephant Road Branch</option>
-                            <option>Joypara Branch</option>
-                            <option>Nayabazar Branch</option>
-                            <option>Savar Bazar Branch</option>
-                            <option>Imamganj Branch</option>
-                            <option>Bashundhara Branch</option>
-                            <option>Shyamoli Branch</option>
-                            <option>Bandura Branch</option>
-                            <option>Mirpur Circle-10 Branch</option>
-                            <option>Satmosjid Road Branch</option>
-                            <option>Rampura Branch</option>
-                        </optgroup>
+                    <optgroup label="Dhaka Region">
+                        <option>Local Office</option>
+                        <option>Banani Branch</option>
+                        <option>Nababpur Branch</option>
+                        <option>Motijheel Foreign Exchange Branch</option>
+                        <option>Kawran Bazar Branch</option>
+                        <option>Shantinagar Branch</option>
+                        <option>Dhanmondi Branch</option>
+                        <option>Mohakhali Branch</option>
+                        <option>Mirpur Branch</option>
+                        <option>Gulshan Branch</option>
+                        <option>Uttara Branch</option>
+                        <option>Islampur Branch</option>
+                        <option>Dania Branch</option>
+                        <option>Dhaka EPZ Branch</option>
+                        <option>Elephant Road Branch</option>
+                        <option>Joypara Branch</option>
+                        <option>Nayabazar Branch</option>
+                        <option>Savar Bazar Branch</option>
+                        <option>Imamganj Branch</option>
+                        <option>Bashundhara Branch</option>
+                        <option>Shyamoli Branch</option>
+                        <option>Bandura Branch</option>
+                        <option>Mirpur Circle-10 Branch</option>
+                        <option>Satmosjid Road Branch</option>
+                        <option>Rampura Branch</option>
+                    </optgroup>
 
-                        <optgroup label="Chittagong Region">
-                            <option>Agrabad Branch</option>
-                            <option>Patherhat Branch</option>
-                            <option>Hathazari Branch</option>
-                            <option>O.R. Nizam Road Branch</option>
-                            <option>Muradpur Branch</option>
-                            <option>Jubilee Road Branch</option>
-                        </optgroup>
+                    <optgroup label="Chittagong Region">
+                        <option>Agrabad Branch</option>
+                        <option>Patherhat Branch</option>
+                        <option>Hathazari Branch</option>
+                        <option>O.R. Nizam Road Branch</option>
+                        <option>Muradpur Branch</option>
+                        <option>Jubilee Road Branch</option>
+                    </optgroup>
 
-                        <optgroup label="Sylhet Region">
-                            <option>Sylhet Branch</option>
-                            <option>Biswanath Branch</option>
-                            <option>Golapganj Branch</option>
-                            <option>Goala Bazar Branch</option>
-                        </optgroup>
+                    <optgroup label="Sylhet Region">
+                        <option>Sylhet Branch</option>
+                        <option>Biswanath Branch</option>
+                        <option>Golapganj Branch</option>
+                        <option>Goala Bazar Branch</option>
+                    </optgroup>
 
-                        <optgroup label="Khulna Region">
-                            <option>Khulna Branch</option>
-                            <option>Daulatpur Branch</option>
-                            <option>Boro Bazar Branch</option>
-                            <option>Bagerhat Branch</option>
-                        </optgroup>
+                    <optgroup label="Khulna Region">
+                        <option>Khulna Branch</option>
+                        <option>Daulatpur Branch</option>
+                        <option>Boro Bazar Branch</option>
+                        <option>Bagerhat Branch</option>
+                    </optgroup>
 
-                        <optgroup label="Rajshahi Region">
-                            <option>Rajshahi Branch</option>
-                            <option>Chapai Nawabganj Branch</option>
-                            <option>Joypurhat Branch</option>
-                            <option>Naogaon Branch</option>
-                        </optgroup>
+                    <optgroup label="Rajshahi Region">
+                        <option>Rajshahi Branch</option>
+                        <option>Chapai Nawabganj Branch</option>
+                        <option>Joypurhat Branch</option>
+                        <option>Naogaon Branch</option>
+                    </optgroup>
 
-                        <optgroup label="Barisal Region">
-                            <option>Barishal Branch</option>
-                            <option>Bhola Branch</option>
-                            <option>Jhalokati Branch</option>
-                            <option>Patuakhali Branch</option>
-                        </optgroup>
+                    <optgroup label="Barisal Region">
+                        <option>Barishal Branch</option>
+                        <option>Bhola Branch</option>
+                        <option>Jhalokati Branch</option>
+                        <option>Patuakhali Branch</option>
+                    </optgroup>
 
-                        <optgroup label="Rangpur Region">
-                            <option>Rangpur Branch</option>
-                            <option>Dhap Branch</option>
-                            <option>Dinajpur Branch</option>
-                            <option>Gobindaganj Branch</option>
-                        </optgroup>
+                    <optgroup label="Rangpur Region">
+                        <option>Rangpur Branch</option>
+                        <option>Dhap Branch</option>
+                        <option>Dinajpur Branch</option>
+                        <option>Gobindaganj Branch</option>
+                    </optgroup>
 
-                        <optgroup label="Mymensingh Region">
-                            <option>Mymensingh Branch</option>
-                            <option>Master Bari Branch</option>
-                            <option>Seed Store Bazar Branch</option>
-                            <option>Mymensingh Station Road Branch</option>
-                        </optgroup>
-                    </select>
-                </label>
+                    <optgroup label="Mymensingh Region">
+                        <option>Mymensingh Branch</option>
+                        <option>Master Bari Branch</option>
+                        <option>Seed Store Bazar Branch</option>
+                        <option>Mymensingh Station Road Branch</option>
+                    </optgroup>
+                </select>
+            </label>
+
 
                 <label class="block">
                     <span class="text-gray-700">Full Name</span>
-                    <input type="text" class="input input-bordered w-full mt-1">
-                </label>
-
-                <label class="block">
-                    <span class="text-gray-700">Father’s/Husband’s Name</span>
-                    <input type="text" class="input input-bordered w-full mt-1">
-                </label>
-
-                <label class="block">
-                    <span class="text-gray-700">Mother’s Name</span>
                     <input type="text" class="input input-bordered w-full mt-1">
                 </label>
 
@@ -199,11 +222,6 @@
                     <input type="tel" class="input input-bordered w-full mt-1">
                 </label>
 
-                <label class="block">
-                    <span class="text-gray-700">National ID/Passport Number</span>
-                    <input type="text" class="input input-bordered w-full mt-1">
-                </label>
-
                 <button type="button" class="btn btn-primary w-full mt-4">Next</button>
             </fieldset>
 
@@ -214,16 +232,6 @@
                 <label class="block">
                     <span class="text-gray-700">Nominee’s Name</span>
                     <input type="text" class="input input-bordered w-full mt-1">
-                </label>
-
-                <label class="block">
-                    <span class="text-gray-700">Relation with Account Holder</span>
-                    <input type="text" class="input input-bordered w-full mt-1">
-                </label>
-
-                <label class="block">
-                    <span class="text-gray-700">Nominee’s Address</span>
-                    <textarea class="textarea textarea-bordered w-full mt-1"></textarea>
                 </label>
 
                 <button type="button" class="btn btn-primary w-full mt-4">Next</button>
