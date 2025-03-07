@@ -12,7 +12,7 @@
     <div class="card w-full max-w-lg bg-white dark:bg-gray-800 shadow-lg p-6 rounded-xl">
         <h2 class="text-2xl font-bold text-center mb-4 text-gray-800 dark:text-white">Open A/C</h2>
 
-        <!-- Step Indicator (Static for now) -->
+        <!-- Step Indicator -->
         <div class="flex items-center justify-between mb-4">
             <div class="step step-primary">1</div>
             <div class="border-t-2 border-gray-400 flex-grow mx-2"></div>
@@ -39,27 +39,22 @@
                             <option>Nababpur Branch</option>
                             <option>Motijheel Foreign Exchange Branch</option>
                             <option>Kawran Bazar Branch</option>
-                            <option>Shantinagar Branch</option>
-                            <option>Dhanmondi Branch</option>
                         </optgroup>
 
                         <optgroup label="Chittagong Region">
                             <option>Agrabad Branch</option>
                             <option>Patherhat Branch</option>
                             <option>Hathazari Branch</option>
-                            <option>O.R. Nizam Road Branch</option>
                         </optgroup>
 
                         <optgroup label="Sylhet Region">
                             <option>Sylhet Branch</option>
                             <option>Biswanath Branch</option>
-                            <option>Golapganj Branch</option>
                         </optgroup>
 
                         <optgroup label="Khulna Region">
                             <option>Khulna Branch</option>
                             <option>Daulatpur Branch</option>
-                            <option>Boro Bazar Branch</option>
                         </optgroup>
 
                         <optgroup label="Rajshahi Region">
@@ -74,7 +69,6 @@
 
                         <optgroup label="Rangpur Region">
                             <option>Rangpur Branch</option>
-                            <option>Dhap Branch</option>
                         </optgroup>
 
                         <optgroup label="Mymensingh Region">
@@ -93,15 +87,16 @@
                     <input type="text" class="input input-bordered w-full mt-1">
                 </label>
 
-                <label class="block">
-                    <span class="text-gray-700 dark:text-gray-300">Marital Status</span>
-                    <div class="flex space-x-2 mt-1">
-                        <button type="button" class="btn btn-primary w-1/2">Un-Married</button>
-                        <button type="button" class="btn btn-outline w-1/2">Married</button>
-                    </div>
-                </label>
-
-                <button type="button" class="btn btn-primary w-full mt-4">Next</button>
+                <!-- Marital Status using Radio Buttons -->
+                <div class="flex space-x-2">
+                    <label class="btn">
+                        <input type="radio" name="marital_status" value="Unmarried" class="radio" checked> UN-MARRIED
+                    </label>
+                    <label class="btn">
+                        <input type="radio" name="marital_status" value="Married" class="radio"> MARRIED
+                    </label>
+                </div>
+                
             </fieldset>
 
             <!-- Step 2: Financial Details -->
